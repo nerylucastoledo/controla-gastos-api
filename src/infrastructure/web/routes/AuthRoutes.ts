@@ -20,4 +20,8 @@ router.get("/token", (request, response) => {
   return authController.authToken(request, response)
 })
 
+router.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 export { router as authRoutes };
