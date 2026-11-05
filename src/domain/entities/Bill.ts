@@ -9,6 +9,7 @@ export type BillProps = {
   value: string;
   item: string;
   card: string;
+  installment: boolean;
 }
 
 export class Bill {
@@ -20,6 +21,7 @@ export class Bill {
   private readonly _value: string;
   private readonly _item: string;
   private readonly _card: string;
+  private readonly _installment: boolean;
 
   private constructor(props: BillProps) {
     this._id = props._id
@@ -30,9 +32,10 @@ export class Bill {
     this._value = props.value;
     this._item = props.item;
     this._card = props.card;
+    this._installment = props.installment;
   }
 
-  public static create(username: string, date: string, people: string, category: string, value: string, item: string, card: string) {
+  public static create(username: string, date: string, people: string, category: string, value: string, item: string, card: string, installment: boolean) {
     return new Bill({
       _id: new ObjectId(),
       username,
@@ -42,6 +45,7 @@ export class Bill {
       value,
       item,
       card,
+      installment,
     })
   }
   
@@ -79,5 +83,9 @@ export class Bill {
 
   public get card(): string {
     return this._card;
+  }
+
+  public get installment(): boolean {
+    return this._installment;
   }
 }
