@@ -16,6 +16,7 @@ export class BillRepositoryMongo implements IBillRepository {
       value: bill.value,
       item: bill.item,
       card: bill.card,
+      installment: bill.installment,
     }
 
     await this.db
@@ -34,6 +35,7 @@ export class BillRepositoryMongo implements IBillRepository {
         value: item.value,
         item: item.item,
         card: item.card,
+        installment: item.installment,
       }
     })
 
@@ -59,6 +61,7 @@ export class BillRepositoryMongo implements IBillRepository {
       value: bill.value,
       item: bill.item,
       card: bill.card,
+      installment: bill.installment,
     })
 
     return newBill;
@@ -82,6 +85,7 @@ export class BillRepositoryMongo implements IBillRepository {
         value: item.value,
         item: item.item,
         card: item.card,
+        installment: item.installment,
       })
       return bill
     })
@@ -107,6 +111,7 @@ export class BillRepositoryMongo implements IBillRepository {
         value: item.value,
         item: item.item,
         card: item.card,
+        installment: item.installment,
       })
       return bill
     })
@@ -136,6 +141,7 @@ export class BillRepositoryMongo implements IBillRepository {
         value: item.value,
         item: item.item,
         card: item.card,
+        installment: item.installment,
       })
       return bill
     })
