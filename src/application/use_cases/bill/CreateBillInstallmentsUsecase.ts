@@ -44,7 +44,8 @@ export class CreateBillInstallmentsUsecase implements Usecase<CreateBillInputDTO
             bill.people,
             bill.category,
             bill.value, `${bill.item} ${i} - ${bill.installments}`,
-            bill.card
+            bill.card,
+            true
           )
   
           body.push(newBill);

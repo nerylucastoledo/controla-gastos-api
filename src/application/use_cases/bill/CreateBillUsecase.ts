@@ -18,7 +18,7 @@ export class CreateBillUsecase implements Usecase<CreateBillInputDTO, void> {
       throw new Error("Todos os campos precisam estar preenchidos.")
     }
 
-    const bill = Bill.create(input.username, input.date, input.people, input.category, input.value, input.item, input.card)
+    const bill = Bill.create(input.username, input.date, input.people, input.category, input.value, input.item, input.card, input.installments > 1)
 
     await this.billRepository.save(bill)
   }
