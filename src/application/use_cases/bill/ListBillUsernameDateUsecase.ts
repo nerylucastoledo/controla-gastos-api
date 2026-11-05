@@ -14,6 +14,7 @@ export type BillOutputDTO = {
   value: string;
   item: string;
   card: string;
+  installment: boolean;
 }
 
 export type ListBillOutputDTO = {
@@ -43,6 +44,7 @@ export class ListBillUsernameDateUsecase implements Usecase<ListUsernameDateInpu
         value: bill.value,
         item: bill.item,
         card: bill.card,
+        installment: bill.installment,
       }
     })
 
